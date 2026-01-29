@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-saffron: #ff6b35;
+  --color-saffron-dark: #e85a2a;
+  --color-ink: #1a1a2e;
+  --color-ink-light: #2d2d44;
+  --color-cream: #fdf8f3;
+  --color-cream-dark: #f5ebe0;
+  --color-mint: #00d9a5;
+  --color-slate: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-saffron);
+  color: white;
+}
+
+.viewfinder {
+  position: relative;
+}
+.viewfinder::before,
+.viewfinder::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-saffron);
+}
+.viewfinder::before {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+.viewfinder::after {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}
+
+.film-strip {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-ink) 0px,
+    var(--color-ink) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  height: 8px;
+}
+
+.stamp {
+  border: 3px solid currentColor;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  transform: rotate(-3deg);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lift {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+.lift:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.grid-paper {
+  background-image:
+    linear-gradient(var(--color-cream-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-cream-dark) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
