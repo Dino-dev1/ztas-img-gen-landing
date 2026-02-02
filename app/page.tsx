@@ -1,8 +1,6 @@
 import { Hero } from "@/components/sections/hero"
 import { Problem } from "@/components/sections/problem"
-import { Solution } from "@/components/sections/solution"
 import { Features } from "@/components/sections/features"
-import { HowItWorks } from "@/components/sections/how-it-works"
 import { Pricing } from "@/components/sections/pricing"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FAQ } from "@/components/sections/faq"
@@ -16,9 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
-      <Solution />
       <Features />
-      <HowItWorks />
       <Pricing />
       <Testimonials />
       <FAQ />
